@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{id:int?}"
 @model Ambrus_Andrea_Lab2.Pages.Publishers.IndexModel
 
 @{
@@ -20,6 +20,7 @@
         </tr>
     </thead>
     <tbody>
+
 @foreach (var item in Model.Publisher) {
         <tr>
             <td>
