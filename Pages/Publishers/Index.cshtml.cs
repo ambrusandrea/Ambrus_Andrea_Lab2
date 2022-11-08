@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Ambrus_Andrea_Lab2.Data;
 using Ambrus_Andrea_Lab2.Models;
-using Ambrus_Andrea_Lab2.ViewModels;
+using Ambrus_Andrea_Lab2.Models.ViewModels;
 
 namespace Ambrus_Andrea_Lab2.Pages.Publishers
 {
@@ -19,7 +19,6 @@ namespace Ambrus_Andrea_Lab2.Pages.Publishers
         {
             _context = context;
         }
-
         public IList<Publisher> Publisher { get; set; } = default!;
         public PublisherIndexData PublisherData { get; set; }
         public int PublisherID { get; set; }
@@ -40,15 +39,12 @@ namespace Ambrus_Andrea_Lab2.Pages.Publishers
                 PublisherData.Books = publisher.Books;
             }
         }
-
-
-            public async Task OnGetAsync()
-            {
-                if (_context.Publisher != null)
-                {
-                    Publisher = await _context.Publisher.ToListAsync();
-                }
-            }
-        }
+        // public async Task OnGetAsync()
+        // {
+        //  if (_context.Publisher != null)
+        //  {
+        //       Publisher = await _context.Publisher.ToListAsync();
+        //  }
+        // }
     }
-
+}
