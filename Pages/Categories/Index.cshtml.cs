@@ -8,9 +8,12 @@ using Microsoft.EntityFrameworkCore;
 using Ambrus_Andrea_Lab2.Data;
 using Ambrus_Andrea_Lab2.Models;
 using Ambrus_Andrea_Lab2.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace Ambrus_Andrea_Lab2.Pages.Categories
-{ 
+{
+    [Authorize(Roles = "Admin")]
     public class IndexModel : PageModel
     {
         private readonly Ambrus_Andrea_Lab2.Data.Ambrus_Andrea_Lab2Context _context;
